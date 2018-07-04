@@ -1,73 +1,73 @@
-# 代码贡献规范
+#Code Contribution Specification
 
-有任何疑问，欢迎提交 [issue](https://github.com/stbui/angular-material-app/issues)，
-或者直接修改提交 [PR](https://github.com/stbui/angular-material-app/pulls)!
+If you have any questions, please feel free to submit [issue](https://github.com/stbui/angular-material-app/issues).
+Or modify the submission directly [PR](https://github.com/stbui/angular-material-app/pulls)!
 
-## 提交 issue
+## Submit issue
 
-- 请确定 issue 的类型。
-- 请避免提交重复的 issue，在提交之前搜索现有的 issue。
-- 在标签(分类参考**标签分类**), 标题 或者内容中体现明确的意图。
+- Please determine the type of issue.
+- Please avoid submitting duplicate issues and search for existing issues before committing.
+- Express a clear intent in the label (category reference ** label classification**), title or content.
 
-标签可分为两类，type 和 scope
+Tags can be divided into two categories, type and scope
 
-- type: issue 的类型，如 `feature`, `bug`, `documentation`, `performance`, `support` ...
-- scope: 修改文件的范围，如 `core: xx`，`plugin: xx`，`deps: xx`
+- type: the type of issue, such as `feature`, `bug`, `documentation`, `performance`, `support` ...
+- scope: modify the scope of the file, such as `core: xx`, `plugin: xx`, `deps: xx`
 
-### 常用标签说明
+### Common label description
 
-- `support`: issue 提出的问题需要开发者协作排查，咨询，调试等等日常技术支持。
-- `bug`: 一旦发现可能是 bug 的问题，请打上 `bug`，然后等待确认，一旦确认是 bug，此 issue 会被再打上 `confirmed`。
-  - 此时 issue 会被非常高的优先级进行处理。
-  - 如果此 bug 是正在影响线上应用正常运行，会再打上 `critical`，代表是最高优先级，需要马上立刻处理！
-  - bug 会在最低需要修复的版本进行修复，如是在 `0.9.x` 要修复的，而当前最新版本是 `1.1.x`，
-  那么此 issue 还会被打上 `0.9`，`0.10`，`1.0`，`1.1`，代表需要修复到这些版本。
+- The questions raised by `support`: issue require developers to collaborate on troubleshooting, consulting, debugging, and other day-to-day technical support.
+- `bug`: Once you find a problem that may be a bug, please type `bug` and wait for confirmation. Once the bug is confirmed, the issue will be marked with `confirmed`.
+  - The issue will be processed with a very high priority.
+  - If this bug is affecting the normal operation of the online application, it will be marked with `critical`, which means it is the highest priority and needs to be processed immediately!
+  - The bug will be fixed in the version that needs to be fixed at the minimum. If it is fixed in `0.9.x`, the latest version is `1.1.x`.
+  Then this issue will be marked with `0.9`, `0.10`, `1.0`, `1.1`, which means that you need to fix these versions.
 
-## 编写文档
+## Writing a document
 
-所有功能点必须提交配套文档，文档须满足以下要求
+All function points must submit supporting documents, the documents must meet the following requirements
 
-- 必须说清楚问题的几个方面：what（是什么），why（为什么），how（怎么做），可根据问题的特性有所侧重。
-- how 部分必须包含详尽完整的操作步骤，必要时附上 **足够简单，可运行** 的范例代码，
-- 提供必要的链接，如申请流程，术语解释和参考文档等。
+- It must be clear about several aspects of the problem: what (what is), what (why), how (how to do it), depending on the nature of the problem.
+The -how section must contain detailed and complete steps, and if necessary, ** sample code that is simple enough to run **
+- Provide the necessary links, such as the application process, terminology explanations and reference documents.
 
-## 提交代码
+## Submit code
 
-### 提交 Pull Request
+### Submit Pull Request
 
-如果你有仓库的开发者权限，而且希望贡献代码，那么你可以创建分支修改代码提交 PR，egg 开发团队会 review 代码合并到主干。
+If you have developer rights to the repository and want to contribute code, you can create a branch modification code to submit the PR, and the egg development team will review the code and merge it into the trunk.
 
 ```bash
-# 先创建开发分支开发，分支名应该有含义，避免使用 update、tmp 之类的
+# First create development branch development, branch name should have meaning, avoid using update, tmp, etc.
 $ git checkout -b branch-name
 
-# 开发完成后跑下测试是否通过，必要时需要新增或修改测试用例
+# Run the test after the completion of the development, if necessary, you need to add or modify the test case
 $ npm test
 
-# 测试通过后，提交代码，message 见下面的规范
+# After passing the test, submit the code, message see the specification below
 
-$ git add . # git add -u 删除文件
+$ git add . # git add -u Delete files
 $ git commit -m "fix(role): role.use must xxx"
 $ git push origin branch-name
 ```
 
-提交后就可以在 [angular-material-app](https://github.com/stbui/angular-material-app/pulls) 创建 Pull Request 了。
+Once submitted, you can create a Pull Request at [angular-material-app] (https://github.com/stbui/angular-material-app/pulls).
 
-由于谁也无法保证过了多久之后还记得多少，为了后期回溯历史的方便，请在提交 MR 时确保提供了以下信息。
+Since no one can guarantee how much it will be remembered after a long time, in order to facilitate the retrospective history, please provide the following information when submitting MR.
 
-1. 需求点（一般关联 issue 或者注释都算）
-2. 升级原因（不同于 issue，可以简要描述下为什么要处理）
-3. 框架测试点（可以关联到测试文件，不用详细描述，关键点即可）
-4. 关注点（针对用户而言，可以没有，一般是不兼容更新等，需要额外提示）
+1. Demand point (generally associated issue or comment)
+2. Reason for the upgrade (unlike the issue, you can briefly describe why you want to deal with it)
+3. Frame test points (can be linked to test files, without detailed description, key points)
+4. Points of interest (for users, there may be no, generally not compatible with updates, etc., additional prompts are required)
 
-### 代码风格
+### Code Style
 
-你的代码风格必须通过 eslint，你可以运行 `$ npm run lint` 本地测试。
+Your code style must pass eslint, you can run the `$ npm run lint` local test.
 
-### Commit 提交规范
+### Commit submission specification
 
-根据 [angular 规范](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit-message-format)提交 commit，
-这样 history 看起来更加清晰，还可以自动生成 changelog。
+Submit a commit according to the [angular specification] (https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit-message-format)
+This way the history looks clearer and the changelog can be generated automatically.
 
 ```xml
 <type>(<scope>): <subject>
@@ -77,46 +77,46 @@ $ git push origin branch-name
 <footer>
 ```
 
-（1）type
+(1)type
 
-提交 commit 的类型，包括以下几种
+Submit the type of commit, including the following
 
-- feat: 新功能
-- fix: 修复问题
-- docs: 修改文档
-- style: 修改代码格式，不影响代码逻辑
-- refactor: 重构代码，理论上不影响现有功能
-- perf: 提升性能
-- test: 增加修改测试用例
-- chore: 修改工具相关（包括但不限于文档、代码生成等）
-- deps: 升级依赖
+- feat: new features
+- fix: fix the problem
+- docs: modify the document
+- style: modify the code format without affecting the code logic
+- refactor: Refactoring code, theoretically does not affect existing features
+- perf: improve performance
+- test: Add modification test case
+- chore: modify tool related (including but not limited to documentation, code generation, etc.)
+- deps: upgrade dependencies
 
-（2）scope
+(2)scope
 
-修改文件的范围（包括但不限于 doc, middleware, core, config, plugin）
+Modify the scope of the file (including but not limited to doc, middleware, core, config, plugin)
 
-（3）subject
+(3) subject
 
-用一句话清楚的描述这次提交做了什么
+Describe clearly what this submission did in one sentence
 
-（4）body
+(4)body
 
-补充 subject，适当增加原因、目的等相关因素，也可不写。
+Supplement the subject, and increase the relevant factors such as the cause and purpose, or write it.
 
-（5）footer
+(5) footer
 
-- **当有非兼容修改(Breaking Change)时必须在这里描述清楚**
-- 关联相关 issue，如 `Closes #1, Closes #2, #3`
-- 如果功能点有新增或修改的，还需要关联文档 `doc`
+- ** Must be clearly described here when there is a Breaking Change**
+- Associate related issues, such as `Closes #1, Closes #2, #3`
+- If the function point is added or modified, you need to associate the document `doc`
 
-示例
+Example
 
 ```
-fix($compile): [BREAKING_CHANGE] couple of unit tests for IE9
+Fix($compile): [BREAKING_CHANGE] couple of unit tests for IE9
 
 Older IEs serialize html uppercased, but IE9 does not...
 Would be better to expect case insensitive, unfortunately jasmine does
-not allow to user regexps for throw expectations.
+Not allow to user regexps for throw expectations.
 
 Document change on #123
 
@@ -124,52 +124,52 @@ Closes #392
 
 BREAKING CHANGE:
 
-  Breaks foo.bar api, foo.baz should be used instead
+  Breaks foo.bar api, foo.baz should be used instead
 ```
 
-查看具体[文档](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit)
+See the specific [documentation] (https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit)
 
-## 发布管理
+## Release Management
 
 
-### 分支策略
+### Branching strategy
 
-`master` 分支为当前稳定发布的版本，`next` 分支为下一个开发中的大版本。
+The `master` branch is the currently stable release, and the `next` branch is the next major version of the development.
 
-- 只维护两个版本，除非有安全问题，否则修复只会 patch 到 `master` 和 `next` 分支，其他更新推动上层框架升级到稳定大版本的最新版本。
-- 所有 API 的废弃都需要在当前的稳定版本上 `deprecate` 提示，并保证在当前的稳定版本上一直兼容到新版本的发布。
-- `master` 分支不设置 publish tag，上层框架基于 semver 依赖稳定版本。
-- `next` 分支设置 tag 为 `next`，上层框架可以通过 `angular-material-app@next` 引用开发中的版本进行测试。
+- Only two versions are maintained. Unless there are security issues, the fix will only patch to the `master` and `next` branches. Other updates push the upper framework to the latest version of the stable large version.
+- Deprecation of all APIs requires a `deprecate` prompt on the current stable version and guarantees compatibility with the new version on the current stable version.
+- The `master` branch does not set the publish tag, and the upper framework is based on the semver dependency stable version.
+- The `next` branch setting tag is `next`, and the upper framework can be tested by reference to the version in development by `angular-material-app@next`.
 
-### 发布策略
+### Publishing strategy
 
-每个大版本都有一个发布经理管理（PM），他/她要做的事情
+Every major version has a release manager management (PM), what he/she has to do
 
-#### 准备工作：
+#### Ready to work:
 
-- 建立 milestone，确认需求关联 milestone，指派和更新 issues，如 [1.x milestone]。
-- 从 `master` 分支新建 `next` 分支，并设置 tag 为 `next`。
+- Create milestone, confirm the requirements associated with milestone, assign and update issues such as [1.x milestone].
+- Create a new `next` branch from the `master` branch and set the tag to `next`.
 
-#### 发布前：
+#### Before posting:
 
-- 确认当前 Milestone 所有的 issue 都已关闭或可延期，完成性能测试。
-- 发起一个新的 [Release Proposal MR]，按照 [node CHANGELOG] 进行 `History` 的编写，修正文档中与版本相关的内容，commits 可以自动生成。
-    ```bash
-    $ npm run commits
-    ```
-- 指定下一个大版本的 PM。
+- Confirm that all current Milestone issues are closed or deferred to complete performance testing.
+- Initiate a new [Release Proposal MR], follow the [node CHANGELOG] to write `History`, fix the version-related content in the document, and commits can be generated automatically.
+    ```bash
+    $ npm run commits
+    ```
+- Specify the next major version of PM.
 
-#### 发布时：
+#### When publishing:
 
-- 将老的稳定版本（master）备份到以当前大版本为名字的分支上（例如 `1.x`），并设置 tag 为 `release-{v}.x`（ v 为当前版本，例如 `release-1.x`）。
-- 将 `next` 分支推送到 `master`，成为新的稳定版本分支，并去除 `next` tag，修改 README 中与分支相关的内容。
-- 发布新的稳定版本到 [npm]，并通知上层框架进行更新。
-- `npm publish` 之前，请先阅读[『我是如何发布一个 npm 包的』]。
+- Back up the old stable version (master) to the branch with the current major version (for example, `1.x`) and set the tag to `release-{v}.x` (v is the current version, for example ` Release-1.x`).
+- Push the `next` branch to `master` to become the new stable version branch, and remove the `next` tag to modify the branch-related content in the README.
+- Publish a new stable version to [npm] and notify the upper framework to update.
+- Before 'npm publish`, please read ["How do I post an npm package"].
 
-上述描述中所有的设置 tag 都是指在 `package.json` 中设置 npm 的 tag。
+All of the set tags in the above description refer to the tag that sets npm in `package.json`.
 
 ```json
 "publishConfig": {
-  "tag": "next"
+  "tag": "next"
 }
 ```
